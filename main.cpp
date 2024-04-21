@@ -1,4 +1,5 @@
-//to do list 
+//TO DO LIST 
+
 
 #include <iostream>
 #include <string>
@@ -35,7 +36,6 @@ int main()
     char input_option;
     int input_id;
     std::string input_description;
-    std::string version = "v0.2.0";
     std::list<TodoItem> todoItems;
     std::list<TodoItem>::iterator it;
 
@@ -45,7 +45,7 @@ int main()
 
     while (1) {
         system("cls");
-        std::cout << "Todo List Maker - " << version << std::endl;
+        std::cout << "Todo List Maker - " << std::endl;
         std::cout << std::endl << std::endl;
 
         for (it = todoItems.begin(); it != todoItems.end(); it++) {
@@ -62,19 +62,19 @@ int main()
 
         std::cout << std::endl << std::endl;
 
-        std::cout << "[a]dd a new Todo" << std::endl;
-        std::cout << "[c]omplete a Todo" << std::endl;
-        std::cout << "[q]uit" << std::endl;
+        std::cout << "1: add a new Todo" << std::endl;
+        std::cout << "2: complete a Todo" << std::endl;
+        std::cout << "3: quit" << std::endl;
 
         std::cout << "choice: ";
 
         std::cin >> input_option;
 
-        if (input_option == 'q') {
+        if (input_option == '3') {
             std::cout << "Have a great day now!" << std::endl;
             break;
         }
-        else if (input_option == 'a') {
+        else if (input_option == '1') {
             std::cout << "Add a new description: ";
             std::cin.clear();
             std::cin.ignore();
@@ -85,7 +85,7 @@ int main()
             todoItems.push_back(newItem);
 
         }
-        else if (input_option == 'c') {
+        else if (input_option == '2') {
             std::cout << "Enter id to mark completed: ";
             std::cin >> input_id;
 
